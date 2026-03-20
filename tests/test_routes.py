@@ -55,10 +55,9 @@ class TestAccountService(TestCase):
         """Runs once after each test case"""
         db.session.remove()
 
-    ######################################################################
-    #  H E L P E R   M E T H O D S
-    ######################################################################
-
+######################################################################
+#  H E L P E R   M E T H O D S
+######################################################################
     def _create_accounts(self, count):
         """Factory method to create accounts in bulk"""
         accounts = []
@@ -197,5 +196,3 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         # Check for the CORS header
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
-
-
